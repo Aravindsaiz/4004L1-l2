@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resume</title>
+        <link rel ="stylesheet" type="text/css" href="style.css">
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+        <script src="jquery-3.4.1.min.js"></script>
+        <script type="text/javascript">
+        function genPDF()
+        {
+                var doc = new jsPDF();
+                var elementHTML = $('#table1').html();
+               
+                doc.fromHTML(elementHTML, 15, 15, {
+                'width': 170,
+                 
+                 });
+                 doc.addPage();
+                 var elementHTML = $('#table2').html();
+                
+                doc.fromHTML(elementHTML, 15, 15, {
+                'width': 170
+                 });
+                 doc.addPage();
+                 var elementHTML = $('#table3').html();
+                
+                doc.fromHTML(elementHTML, 15, 15, {
+                'width': 170
+
+                 });
+
+                doc.save('Aravindsai_Resume.pdf');
+        }
+        </script>
+    
+    </head>
+    <body>
+
+  
+        <div id="table1">
+            <table  >
+                <p><b>PersonalDetails</b></p>
+
+                <tr>
+                        <td>Myself</td>
+                        <td>               </td>
+                </tr>
+                
+                <tr>
+                    <td>Name:</td>
+                    <td>M.Aravindsai</td>
+                </tr>
+                <tr>
+                        <td>Age:</td>
+                        <td>19</td>
+                </tr>
+                <tr>
+                        <td>Contactno:</td>
+                        <td>9491021456</td>
+                </tr>
+                <tr>
+                        <td>Mailid:</td>
+                        <td>aravindasai.maddukuri@vitap.ac.in</td>
+                </tr>
+                <tr>
+                        <td>Address:</td>
+                        <td>6/12,Rajahmundry,EastGodavariDistrict,AP</td>
+                </tr>
+            </table>
+        </div>
+        <div id="table2">
+            <table>
+                    
+                <p><b>EducationalDetails</b></p>
+                <tr>
+                         <td>EducationalDetails</td>
+                        <td>               </td>
+                 </tr>
+                <tr>
+                        <td>Betch</td>
+                        <td>VELLORE INSTITUTE OF TECHNOLOGY,AP</td>
+                </tr>
+                <tr>
+                        <td>Branch</td>
+                        <td>COMPUTER SCIENCE ENGINEERING</td>
+                </tr>
+                <tr>
+                        <td>Languages</td>
+                        <td>C++,JAVA,WEB PROGRAMMING,PYTHON</td>
+                </tr>
+                <tr>
+                        <td>OtherQualifications</td>
+                        <td>Knowledge on computer graphics,network security,cryptography,AWS</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="table3">
+                <table>
+                    
+                    <tr>
+                            <td>TechnicalDetails</td>
+                            <td>         </td>                    
+                    </tr>
+                    <tr>
+                            <td>Interns:</td>
+                            <td>attended internships at good companies improved skills in Web development,Java</td>
+                    </tr>
+                    <tr>
+                            <td>Projects</td>
+                            <td>Car rental Project in java,php,Android platforms</td>
+                    </tr>
+                    <tr>
+                            <td>Declaraiton</td>
+                            <td>I am keen to continue my career and prepared to work hard in order to achieve my organization objectives and
+                                    I hereby declare that the information furnished above is true to the best of my knowledge.</td>
+                    </tr>
+
+                </table>
+            </div>
+            <button onclick="genPDF()">Download_as_PDF</button>
+
+    </body>
+</html>
