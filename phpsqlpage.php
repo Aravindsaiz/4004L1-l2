@@ -39,7 +39,7 @@ else{
 
 
 ?>
-<form action ="GET">
+<form  action="$_SERVER["PHP_SELF"]" method ="GET">
     <input type="text" value="username" name="uname">
     <input type="text" value="password" name="upass">
     <button type="submit"> login</button>
